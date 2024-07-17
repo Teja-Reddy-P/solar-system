@@ -39,6 +39,6 @@ jobs:
             - name: Archive/Upload Artifcat
               uses: actions/upload-artifact@v4
               with:
-                name: test-job-result-sai
-                path: test-result.xml
+                name: test-job-result-sai-reddy
+                path: test-results.xml
               
