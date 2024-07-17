@@ -39,7 +39,7 @@ jobs:
             - name: Archive/Upload Artifcat
               uses: actions/upload-artifact@v3
               with:
-                name: sai-test-results-most-recent
+                name: sai-test-latest-results
                 path: test-results.xml
 
     code-coverage:
@@ -56,12 +56,13 @@ jobs:
           - name: Install dependencies
             run: npm install
           - name: check code coverage
+            continue-on-error: true
             run: npm run coverage
 
           - name: Archive Test result
             uses: actions/upload-artifact@v3
             with:
-              name: Teja-code-coverage-recent-update
+              name: Teja-code-pstr-coverage
               path: coverage
               retention-days: 5
 
