@@ -60,6 +60,7 @@ jobs:
             run: npm run coverage
 
           - name: Archive Test result
+            if: always()
             uses: actions/upload-artifact@v3
             with:
               name: Teja-code-pstr-coverage
