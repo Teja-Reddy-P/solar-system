@@ -15,7 +15,7 @@ jobs:
         name: Unit testing
         strategy:
           matrix:
-            nodejs version: [18,18,20]
+            nodejs version: [18,19,20]
             operating_system: [ubuntu-latest, macos-latest]
             exclude:
               - nodejs version: 18
