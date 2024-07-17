@@ -39,7 +39,7 @@ jobs:
             - name: Archive/Upload Artifcat
               uses: actions/upload-artifact@v3
               with:
-                name: Test-results-pstr
+                name: sai-test-results
                 path: test-results.xml
 
     code-coverage:
@@ -61,6 +61,7 @@ jobs:
           - name: Archive Test result
             uses: actions/upload-artifact@v3
             with:
-              name: Teja-code-coverage
+              name: Teja-code-coverage-recent
               path: coverage
+              retention-days: 5
 
