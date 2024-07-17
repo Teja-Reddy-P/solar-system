@@ -56,7 +56,7 @@ jobs:
           - name: Install dependencies
             run: npm install
           - name: check code coverage
-            run: mpm run coverage
+            run: npm run coverage
 
           - name: Archive Test result
             uses: actions/upload-artifact@v3
