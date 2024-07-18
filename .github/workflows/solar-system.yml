@@ -80,6 +80,8 @@ jobs:
         needs: [unit_testing, code-coverage]
         name: Containerization
         runs-on: ubuntu-latest
+        permissions: 
+          packages: write
         steps:
           - name: Checkout Repo
             uses: actions/checkout@v4
