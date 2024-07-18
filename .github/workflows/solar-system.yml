@@ -57,14 +57,26 @@ jobs:
 
     code-coverage:
         name: Code coverage
+        container: 
+          image: node:18   
+        services:
+          mongo-db:
+            image: siddharth67/mongo-db:non-prod        # Ports are not needed as both job container and service container running on runner system. Docker containers on the same user -defined bridge  network  expose all ports to each other.  
+            options:
+             -name mongo
+        env:
+           MONGO_URI: 'mongodb://localhost:27017/superData'
+           MONGO_USERNAME: non-prod-user
+           MONGO_PASSWORD: non-prod-password #Password has to store in secrets and username has to store in variables section under repository level    
         runs-on: ubuntu-latest
         steps:
           - name: Checkout The Repo
             uses: actions/checkout@v4
-          - name: setup nodejs version
-            uses: actions/setup-node@v3
-            with:
-              node-version: 18
+
+          #- name: setup nodejs version             #(Since I was using nodejs 18 version container in code-covergae job I have commented out these steps)
+           # uses: actions/setup-node@v3
+            #with:
+             # node-version: 18
 
           - name: Cache NPM Dependencies
             uses: actions/cache@v3
