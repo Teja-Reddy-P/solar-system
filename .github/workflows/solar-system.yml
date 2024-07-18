@@ -63,7 +63,7 @@ jobs:
           mongo-db:
             image: siddharth67/mongo-db:non-prod        # Ports are not needed as both job container and service container running on runner system. Docker containers on the same user -defined bridge  network  expose all ports to each other.  
             options:
-             -name mongo
+             --name mongo
         env:
            MONGO_URI: 'mongodb://localhost:27017/superData'
            MONGO_USERNAME: non-prod-user
