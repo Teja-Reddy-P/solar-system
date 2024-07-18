@@ -65,7 +65,7 @@ jobs:
             options:
              --name mongo
         env:
-           MONGO_URI: 'mongodb://mongo/superData'
+           MONGO_URI: 'mongodb://mongo:27017/superData'     #I am just using mongo label name which is mentioned in before step, because container to container we can assign abel and with the help of label job container can connect to service conatiner.
            MONGO_USERNAME: non-prod-user
            MONGO_PASSWORD: non-prod-password #Password has to store in secrets and username has to store in variables section under repository level    
         runs-on: ubuntu-latest
