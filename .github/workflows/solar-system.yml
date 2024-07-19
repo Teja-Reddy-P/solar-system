@@ -168,6 +168,7 @@ jobs:
             kubeconfig: ${{secrets.KUBECONFIG}}
         - name: Fetech k8's cluster details
           run: |
+            cat /home/runner/work/_temp/kubeconfig_1721389956041
             kubectl version --short
             echo ----------------------------------
             kubectl get nodes
