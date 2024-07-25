@@ -12,8 +12,8 @@ runs:
     - name: Cache NPM Dependencies
       uses: actions/cache@v3
       with:
-        path: ${{inputs.path-to-caching}}
+        path: ${{inputs.path}}
         key: ${{ runner.os}}-node_modules-${{ hashFiles('package-lock.json')}}
     - name: Install Dependencies
       run: npm install
-      shell: Bash
+      shell: bash
