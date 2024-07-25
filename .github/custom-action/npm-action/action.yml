@@ -2,7 +2,7 @@ name: 'NPM Custom action'
 
 description: 'installing and caching NPM Packages'
 inputs:
-  path-to-caching:
+  path:
    description: 'The Path to Caching'
    required: true
 
@@ -12,7 +12,7 @@ runs:
     - name: Cache NPM Dependencies
       uses: actions/cache@v3
       with:
-        path-to-caching: ${{inputs.path-to-caching}}
+        path: ${{inputs.path-to-caching}}
         key: ${{ runner.os}}-node_modules-${{ hashFiles('package-lock.json')}}
     - name: Install Dependencies
       run: npm install

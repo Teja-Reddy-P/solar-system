@@ -39,7 +39,7 @@ jobs:
             - name: Composite Action - Caching and Installing NPM Packages
               uses: ./.github/custom-action/npm-action
               with:
-                path-to-caching: node_modules
+                path: node_modules
             
             - name: Run Unit Testing
               run: npm test
@@ -76,7 +76,7 @@ jobs:
           - name: Composite Action - Caching and Installing NPM Packages
             uses: ./.github/custom-action/npm-action
             with:
-               path-to-caching: node_modules
+               path: node_modules
           - name: check code coverage
             continue-on-error: true
             run: npm run coverage
