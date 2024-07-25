@@ -3,8 +3,8 @@ name: 'NPM Custom action'
 description: 'installing and caching NPM Packages'
 inputs:
   path-to-caching:
-  description: 'The Path to Caching'
-  required: 'true'
+   description: 'The Path to Caching'
+   required: true
 
 runs:
   using: "Composite"
