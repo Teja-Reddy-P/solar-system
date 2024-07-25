@@ -1,4 +1,4 @@
-name: Solar-System-Project
+name: Composite Action
 
 on:
     workflow_dispatch: 
